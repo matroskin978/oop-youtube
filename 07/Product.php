@@ -3,12 +3,11 @@
 class Product
 {
 
-    public ?string $title = 'Some product';
-    public int $price;
-
-    public function sayHello(): string
+    public function __construct(
+        public string $title,
+        public int $price
+    )
     {
-        return 'Hello from ' . __CLASS__;
     }
 
     public function getRealPrice($currency = '$'): string

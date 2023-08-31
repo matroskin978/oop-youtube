@@ -5,7 +5,7 @@ class Cart
 
     public array $data = [];
 
-    public function add(array $product): static
+    public function add(Product $product): static
     {
         $this->data[] = $product;
         return $this;
@@ -14,8 +14,9 @@ class Cart
     public function getTotal(): int|float
     {
         $total = 0;
+        /** @var Product $item */
         foreach ($this->data as $item) {
-            $total += $item['price'];
+            $total += $item->price;
         }
         return $total;
     }
