@@ -15,4 +15,9 @@ class Product
         return "{$currency}" . $this->price / 100;
     }
 
+    public function info(): string
+    {
+        return "\nABOUT PRODUCT:\nName: {$this->title}\nPrice: {$this->getRealPrice()}\n";
+    }
+
 }
